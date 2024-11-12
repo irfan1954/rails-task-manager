@@ -1,3 +1,5 @@
+
+
 <%= form_with model: @task do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -5,9 +7,14 @@
   <%= f.text_field :details %>
 <% end %>
 
+<br>
+
+<%= link_to "Back to main list", tasks_path %>
+
+<br>
+<br>
+
 <%= link_to 'Delete',
   task_path(@task),
   data: {turbo_method: :delete, turbo_confirm: "Are You Sure?"}
 %>
-
-<%= link_to "Back to main list", tasks_path %>
